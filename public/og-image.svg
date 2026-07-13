@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0038A8"/>
+  <rect y="420" width="1200" height="210" fill="#CE1126"/>
+  <rect y="380" width="1200" height="40" fill="#FCD116"/>
+  <text x="600" y="280" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="48" font-weight="bold">Philippine Agency</text>
+  <text x="600" y="340" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="24" opacity="0.9">Official Government Portal</text>
+</svg>
