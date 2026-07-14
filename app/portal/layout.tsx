@@ -17,7 +17,6 @@ import { AGENCY } from "@/lib/constants/agency";
 import { PORTAL_MEMBER } from "@/lib/mock/data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { StatusBadge } from "@/components/shared/status-badge";
 
 const PORTAL_NAV = [
@@ -82,7 +81,6 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
           </div>
           <div className="flex items-center gap-2">
             <StatusBadge status={PORTAL_MEMBER.status} />
-            <ThemeToggle />
             <Button asChild variant="outline" size="sm">
               <Link href="/">
                 <LogOut className="h-4 w-4" />

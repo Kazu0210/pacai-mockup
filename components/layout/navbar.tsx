@@ -7,7 +7,6 @@ import { Menu, X } from "lucide-react";
 import { AGENCY, NAV_LINKS } from "@/lib/constants/agency";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -92,7 +91,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <Button asChild className="hidden sm:inline-flex" size="sm">
             <Link href="/complaints">File Complaint</Link>
           </Button>
