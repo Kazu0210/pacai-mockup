@@ -31,7 +31,7 @@ export const personalInfoSchema = z.object({
 
 export const complaintDetailsSchema = z.object({
   category: z.string().min(1, "Please select a complaint category"),
-  officeConcerned: z.string().min(1, "Please select the office concerned"),
+  officeConcerned: z.string().min(1, "Please select the agency or firm concerned"),
   complaintTitle: z
     .string()
     .min(5, "Title must be at least 5 characters")

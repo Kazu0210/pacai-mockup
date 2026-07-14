@@ -16,8 +16,8 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="About Us"
-          title="Championing Good Governance for Every Filipino"
-          description="The Philippine Agency serves as the nation's dedicated body for accountability, citizen empowerment, and responsive public service."
+          title="Championing Ethical Standards in the Collection Industry"
+          description="PACAI serves as the Philippine Association of Collection Agencies, Inc., dedicated to professionalism, accountability, and ethical collection practices nationwide."
         />
 
         <div className="mb-16 grid gap-6 md:grid-cols-2">
@@ -29,7 +29,7 @@ export function AboutSection() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">Our Mission</h3>
                 <p className="mt-3 leading-relaxed text-slate-600 dark:text-slate-400">
-                  To promote transparency, accountability, and integrity in government service by providing accessible channels for citizen complaints, inquiries, and public information — ensuring every Filipino receives fair and timely resolution.
+                  To promote transparency, accountability, and integrity in the collection industry by providing accessible channels for complaints, inquiries, and public information — ensuring fair and ethical practices for every stakeholder.
                 </p>
               </CardContent>
             </Card>
@@ -43,7 +43,7 @@ export function AboutSection() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">Our Vision</h3>
                 <p className="mt-3 leading-relaxed text-slate-600 dark:text-slate-400">
-                  A Philippines where every citizen trusts government institutions, where public service is efficient and corruption-free, and where digital innovation bridges the gap between the people and their government.
+                  A Philippines where the collection industry operates with integrity, where member agencies uphold the highest ethical standards, and where the public can trust that concerns will be addressed fairly and promptly.
                 </p>
               </CardContent>
             </Card>

@@ -61,9 +61,9 @@ export function InquirySection() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Citizen Inquiry"
+          badge="Member Inquiry"
           title="Send Us Your Inquiry"
-          description="Have a question about government services? Our team is ready to assist you."
+          description="Have a question about PACAI membership, standards, or services? Our team is ready to assist you."
         />
 
         <div className="mx-auto max-w-2xl">

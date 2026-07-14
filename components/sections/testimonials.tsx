@@ -11,9 +11,9 @@ export function TestimonialsSection() {
     <MotionSection className="py-20 sm:py-28" aria-labelledby="testimonials-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Citizen Feedback"
-          title="What Filipinos Are Saying"
-          description="Real experiences from citizens who have used our digital public service platform."
+          badge="Member Feedback"
+          title="What Our Stakeholders Are Saying"
+          description="Real experiences from members and the public who have used the PACAI digital platform."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

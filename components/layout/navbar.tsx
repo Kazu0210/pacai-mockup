@@ -2,13 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X, Shield } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import { AGENCY, NAV_LINKS } from "@/lib/constants/agency";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -17,6 +20,10 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsMobileOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isMobileOpen) {
@@ -29,12 +36,14 @@ export function Navbar() {
     };
   }, [isMobileOpen]);
 
+  const solid = !isHome || isScrolled;
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-white/90 shadow-md backdrop-blur-md dark:bg-slate-950/90 py-2"
+        solid
+          ? "bg-white/95 py-2 shadow-md backdrop-blur-md dark:bg-slate-950/95"
           : "bg-transparent py-4"
       )}
       role="banner"
@@ -44,39 +53,48 @@ export function Navbar() {
         aria-label="Main navigation"
       >
         <Link
-          href="#home"
-          className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ph-blue focus-visible:ring-offset-2 rounded-lg"
-          aria-label={`${AGENCY.name} - Home`}
+          href="/"
+          className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ph-blue focus-visible:ring-offset-2"
+          aria-label={`${AGENCY.fullName} - Home`}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-ph-blue to-ph-blue/80 shadow-md">
-            <Shield className="h-5 w-5 text-white" aria-hidden="true" />
+          <div className="flex h-10 items-center justify-center rounded-xl bg-gradient-to-br from-ph-blue to-ph-blue/80 px-2.5 shadow-md">
+            <span className="text-sm font-bold tracking-wide text-white">{AGENCY.shortName}</span>
           </div>
           <div className="hidden sm:block">
             <span className="block text-sm font-bold leading-tight text-slate-900 dark:text-white">
-              {AGENCY.shortName}
+              {AGENCY.name}
             </span>
-            <span className="block text-xs text-slate-500 dark:text-slate-400">
-              {AGENCY.tagline}
-            </span>
+            <span className="block text-xs text-slate-500 dark:text-slate-400">{AGENCY.tagline}</span>
           </div>
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-ph-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ph-blue dark:text-slate-300 dark:hover:text-ph-blue"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-0.5 lg:flex">
+          {NAV_LINKS.map((link) => {
+            const active =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ph-blue",
+                  active
+                    ? "bg-ph-blue/10 text-ph-blue"
+                    : "text-slate-600 hover:text-ph-blue dark:text-slate-300 dark:hover:text-ph-blue"
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Button asChild className="hidden sm:inline-flex" size="sm">
-            <Link href="#complaint">File a Complaint</Link>
+            <Link href="/complaints">File Complaint</Link>
           </Button>
           <Button
             variant="ghost"
@@ -109,8 +127,8 @@ export function Navbar() {
               </Link>
             ))}
             <Button asChild className="mt-4 w-full">
-              <Link href="#complaint" onClick={() => setIsMobileOpen(false)}>
-                File a Complaint
+              <Link href="/complaints" onClick={() => setIsMobileOpen(false)}>
+                File Complaint
               </Link>
             </Button>
           </div>

@@ -10,35 +10,53 @@ import {
 } from "lucide-react";
 
 export const AGENCY = {
-  name: "Philippine Agency",
-  shortName: "PAG",
-  tagline: "Transparency. Accountability. Service.",
+  name: "PACAI",
+  fullName: "Philippine Association of Collection Agencies, Inc.",
+  shortName: "PACAI",
+  tagline: "Professional. Ethical. Accountable.",
   description:
-    "The Philippine Agency is the national body dedicated to promoting good governance, protecting citizen rights, and ensuring responsive public service across the Republic of the Philippines.",
-  email: "info@philippineagency.gov.ph",
+    "PACAI is the Philippine Association of Collection Agencies, Inc., dedicated to promoting ethical standards, professionalism, and accountability across the collection industry in the Philippines.",
+  email: "info@pacai.org.ph",
   phone: "+63 (2) 8888-0000",
   hotline: "8888",
   address:
-    "Philippine Agency Building, Commonwealth Avenue, Quezon City, Metro Manila 1121, Philippines",
+    "PACAI Office, Commonwealth Avenue, Quezon City, Metro Manila 1121, Philippines",
   officeHours: "Monday – Friday, 8:00 AM – 5:00 PM (Philippine Standard Time)",
-  facebook: "https://www.facebook.com/PhilippineAgency",
-  twitter: "https://twitter.com/PhilippineAgency",
-  youtube: "https://youtube.com/PhilippineAgency",
+  facebook: "https://www.facebook.com/PACAI",
+  twitter: "https://twitter.com/PACAI",
+  youtube: "https://youtube.com/PACAI",
+  website: "https://pacai.org.ph",
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "File Complaint", href: "#complaint" },
-  { label: "Inquiry", href: "#inquiry" },
-  { label: "FAQs", href: "#faqs" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Membership", href: "/membership" },
+  { label: "Complaints", href: "/complaints" },
+  { label: "Verify", href: "/verify" },
+  { label: "Events", href: "/events" },
+  { label: "Portal", href: "/portal" },
 ] as const;
+
+export const FOOTER_LINKS = {
+  services: [
+    { label: "Apply Membership", href: "/membership" },
+    { label: "Renew Membership", href: "/membership/renew" },
+    { label: "File Complaint", href: "/complaints" },
+    { label: "Track Complaint", href: "/complaints/track" },
+    { label: "Verify Agency", href: "/verify" },
+    { label: "Events", href: "/events" },
+  ],
+  legal: [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Code of Ethics", href: "#" },
+    { label: "Accessibility Statement", href: "#" },
+    { label: "Terms of Use", href: "#" },
+  ],
+} as const;
 
 export const STATS = [
   { value: 50000, suffix: "+", label: "Complaints Resolved" },
-  { value: 100000, suffix: "+", label: "Citizen Inquiries" },
+  { value: 100000, suffix: "+", label: "Member Inquiries" },
   { value: 98, suffix: "%", label: "Resolution Rate" },
   { value: 0, suffix: "", label: "Nationwide Coverage", text: "Nationwide" },
 ] as const;
@@ -48,25 +66,25 @@ export const CORE_VALUES = [
     icon: Shield,
     title: "Integrity",
     description:
-      "We uphold the highest ethical standards in every action and decision we make on behalf of the Filipino people.",
+      "We uphold the highest ethical standards in every action and decision we make on behalf of our members and the public.",
   },
   {
     icon: Scale,
     title: "Fairness",
     description:
-      "Every citizen receives equal treatment, impartial review, and due process regardless of background or status.",
+      "Every concern receives equal treatment, impartial review, and due process regardless of background or status.",
   },
   {
     icon: Users,
     title: "Service",
     description:
-      "We place citizens at the center of our work, delivering timely, courteous, and effective public service.",
+      "We place members and stakeholders at the center of our work, delivering timely, courteous, and effective support.",
   },
   {
     icon: Building2,
     title: "Transparency",
     description:
-      "We operate with openness and accountability, ensuring the public can trust how government serves them.",
+      "We operate with openness and accountability, ensuring trust in how our association serves the collection industry.",
   },
 ] as const;
 
@@ -75,14 +93,14 @@ export const SERVICES = [
     icon: MessageSquare,
     title: "Complaint Filing",
     description:
-      "Submit formal complaints against government offices and officials through our secure online portal.",
+      "Submit formal complaints related to collection practices through our secure online portal.",
     href: "#complaint",
   },
   {
     icon: Headphones,
-    title: "Citizen Inquiry",
+    title: "Member Inquiry",
     description:
-      "Ask questions about government programs, procedures, and services. Get clear answers from our team.",
+      "Ask questions about PACAI membership, standards, procedures, and industry guidelines. Get clear answers from our team.",
     href: "#inquiry",
   },
   {
@@ -96,21 +114,21 @@ export const SERVICES = [
     icon: Users,
     title: "Online Assistance",
     description:
-      "Access live guidance and step-by-step support for navigating government processes and requirements.",
+      "Access live guidance and step-by-step support for navigating PACAI processes and requirements.",
     href: "#inquiry",
   },
   {
     icon: Shield,
-    title: "Document Verification",
+    title: "Accreditation Support",
     description:
-      "Verify the authenticity of government-issued documents and certificates through our verification service.",
+      "Verify member credentials and access guidance on accreditation and ethical compliance standards.",
     href: "#services",
   },
   {
     icon: MapPin,
     title: "Public Information",
     description:
-      "Browse agency reports, citizen charters, and public advisories to stay informed about your rights.",
+      "Browse association reports, industry advisories, and public resources to stay informed about your rights.",
     href: "#about",
   },
 ] as const;
@@ -132,7 +150,7 @@ export const TIMELINE_STEPS = [
     step: 3,
     title: "Investigation",
     description:
-      "Our team reviews your complaint, contacts relevant offices, and conducts a thorough assessment.",
+      "Our team reviews your complaint, contacts relevant parties, and conducts a thorough assessment.",
   },
   {
     step: 4,
@@ -144,7 +162,7 @@ export const TIMELINE_STEPS = [
     step: 5,
     title: "Feedback",
     description:
-      "Share your experience to help us improve our services and better serve the Filipino people.",
+      "Share your experience to help us improve our services and better serve the collection industry.",
   },
 ] as const;
 
@@ -157,12 +175,12 @@ export const FAQS = [
   {
     question: "How long does processing take?",
     answer:
-      "Standard complaints are acknowledged within 3 working days and resolved within 15–30 working days, depending on complexity. Urgent matters involving public safety may be expedited. You can track progress using your tracking number.",
+      "Standard complaints are acknowledged within 3 working days and resolved within 15–30 working days, depending on complexity. Urgent matters may be expedited. You can track progress using your tracking number.",
   },
   {
     question: "Can I track my complaint?",
     answer:
-      "Yes. After submitting your complaint, you will receive a unique tracking number (e.g., PAG-2026-000123). Use this number on our Case Tracking service to view real-time status updates on your case.",
+      "Yes. After submitting your complaint, you will receive a unique tracking number (e.g., PACAI-2026-000123). Use this number on our Case Tracking service to view real-time status updates on your case.",
   },
   {
     question: "Is my information confidential?",
@@ -172,7 +190,7 @@ export const FAQS = [
   {
     question: "What types of complaints can I file?",
     answer:
-      "You may file complaints related to government service delivery, red tape, corruption, abuse of authority, delayed transactions, and other concerns involving national government agencies and their personnel.",
+      "You may file complaints related to collection practices, unethical conduct, harassment, member agency misconduct, and other concerns involving PACAI member agencies and their personnel.",
   },
   {
     question: "Can I file a complaint on behalf of someone else?",
@@ -186,47 +204,47 @@ export const TESTIMONIALS = [
     name: "Maria Santos",
     location: "Cebu City",
     comment:
-      "I filed a complaint about delayed document processing and received a response within two weeks. The online system made everything transparent and easy to follow.",
+      "I filed a complaint about improper collection practices and received a response within two weeks. The online system made everything transparent and easy to follow.",
     initials: "MS",
   },
   {
     name: "Juan Dela Cruz",
     location: "Davao City",
     comment:
-      "The tracking number feature gave me peace of mind. I could check my case status anytime without visiting an office. Excellent public service.",
+      "The tracking number feature gave me peace of mind. I could check my case status anytime without visiting an office. Excellent service from PACAI.",
     initials: "JD",
   },
   {
     name: "Ana Reyes",
     location: "Quezon City",
     comment:
-      "As a senior citizen, I appreciated how straightforward the inquiry form was. The team responded promptly and resolved my concern about pension benefits.",
+      "As a member agency representative, I appreciated how straightforward the inquiry form was. The team responded promptly and clarified our accreditation requirements.",
     initials: "AR",
   },
   {
     name: "Roberto Garcia",
     location: "Iloilo City",
     comment:
-      "Professional, respectful, and efficient. The Philippine Agency restored my faith that government can truly serve the people with integrity.",
+      "Professional, respectful, and efficient. PACAI restored my faith that the collection industry can serve the public with integrity.",
     initials: "RG",
   },
 ] as const;
 
 export const COMPLAINT_CATEGORIES = [
-  "Delayed Service",
-  "Red Tape / Bureaucracy",
-  "Corruption / Bribery",
-  "Abuse of Authority",
+  "Unethical Collection Practices",
+  "Harassment / Abuse",
+  "Misrepresentation",
+  "Breach of Confidentiality",
   "Discrimination",
   "Poor Customer Service",
-  "Lost Documents",
+  "Non-Compliance with Standards",
   "Other",
 ] as const;
 
 export const INQUIRY_CATEGORIES = [
   "General Information",
-  "Programs & Services",
-  "Document Requirements",
+  "Membership & Accreditation",
+  "Industry Standards",
   "Case Status",
   "Technical Support",
   "Partnership Inquiry",
@@ -234,13 +252,12 @@ export const INQUIRY_CATEGORIES = [
 ] as const;
 
 export const GOVERNMENT_OFFICES = [
-  "Department of Health (DOH)",
-  "Department of Education (DepEd)",
-  "Department of Social Welfare (DSWD)",
-  "Bureau of Internal Revenue (BIR)",
-  "Philippine National Police (PNP)",
-  "Local Government Unit (LGU)",
-  "Other National Agency",
+  "PACAI Member Agency",
+  "Collection Firm (Non-Member)",
+  "Creditor / Client Company",
+  "Third-Party Collection Service",
+  "Call Center / Contact Center",
+  "Other Related Entity",
 ] as const;
 
 export const ALLOWED_FILE_TYPES = [

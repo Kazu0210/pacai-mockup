@@ -175,7 +175,7 @@ export function ComplaintSection() {
         <SectionHeading
           badge="File a Complaint"
           title="Submit Your Complaint Online"
-          description="Report concerns about government services securely. All submissions are confidential and protected under the Data Privacy Act."
+          description="Report concerns about collection practices securely. All submissions are confidential and protected under the Data Privacy Act."
         />
 
         <div className="mx-auto max-w-3xl">
@@ -320,7 +320,7 @@ export function ComplaintSection() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="complaint-office">Office Concerned *</Label>
+                      <Label htmlFor="complaint-office">Agency / Firm Concerned *</Label>
                       <Controller
                         name="officeConcerned"
                         control={control}
@@ -468,7 +468,7 @@ export function ComplaintSection() {
 
                     <ReviewGroup title="Complaint Details">
                       <ReviewItem label="Category" value={values.category} />
-                      <ReviewItem label="Office" value={values.officeConcerned} />
+                      <ReviewItem label="Agency / Firm" value={values.officeConcerned} />
                       <ReviewItem label="Title" value={values.complaintTitle} />
                       <ReviewItem label="Description" value={values.complaintDescription} />
                     </ReviewGroup>

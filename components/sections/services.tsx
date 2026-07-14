@@ -17,8 +17,8 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Our Services"
-          title="Digital Services for Every Citizen"
-          description="Access government services online — fast, secure, and available wherever you are in the Philippines."
+          title="Digital Services for Members and the Public"
+          description="Access PACAI services online — fast, secure, and available wherever you are in the Philippines."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

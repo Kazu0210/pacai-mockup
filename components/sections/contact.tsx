@@ -88,12 +88,12 @@ export function ContactSection() {
             <div
               className="flex h-full min-h-[320px] items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-700"
               role="img"
-              aria-label="Map showing Philippine Agency office location in Quezon City, Metro Manila"
+              aria-label="Map showing PACAI office location in Quezon City, Metro Manila"
             >
               <div className="text-center p-8">
                 <MapPin className="mx-auto h-12 w-12 text-ph-blue" aria-hidden="true" />
                 <p className="mt-4 text-lg font-semibold text-slate-700 dark:text-slate-200">
-                  Philippine Agency Building
+                  PACAI Office
                 </p>
                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                   Commonwealth Avenue, Quezon City

@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function generateTrackingNumber(): string {
   const year = new Date().getFullYear();
   const random = Math.floor(Math.random() * 900000) + 100000;
-  return `PAG-${year}-${String(random).padStart(6, "0")}`;
+  return `PACAI-${year}-${String(random).padStart(6, "0")}`;
 }
 
 export function formatFileSize(bytes: number): string {

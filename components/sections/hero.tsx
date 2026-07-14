@@ -28,21 +28,21 @@ export function HeroSection() {
           >
             <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-ph-blue/20 bg-ph-blue/5 px-4 py-1.5 text-sm font-medium text-ph-blue dark:bg-ph-blue/10">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              Official Government Portal
+              Official PACAI Portal
             </span>
 
             <h1
               id="hero-heading"
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-[3.25rem] lg:leading-[1.15]"
             >
-              Serving Every Filipino with{" "}
+              Advancing Ethical Collection Practices Across the{" "}
               <span className="bg-gradient-to-r from-ph-blue via-ph-blue to-ph-red bg-clip-text text-transparent">
-                Transparency, Integrity, and Excellence.
+                Philippines.
               </span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-              {AGENCY.description} File complaints, send inquiries, and access public services — all in one trusted digital platform.
+              {AGENCY.description} File complaints, send inquiries, and access association services — all in one trusted digital platform.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -97,9 +97,9 @@ function HeroIllustration() {
               <circle cx="40" cy="40" r="8" fill="#FCD116" />
             </svg>
           </div>
-          <p className="text-center text-xl font-bold">Digital Public Service</p>
+          <p className="text-center text-xl font-bold">{AGENCY.shortName}</p>
           <p className="mt-2 text-center text-sm text-white/80">
-            Empowering citizens through technology
+            Elevating industry standards
           </p>
 
           <div className="mt-8 grid w-full grid-cols-2 gap-3">
