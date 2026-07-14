@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "sonner";
 import { AGENCY } from "@/lib/constants/agency";
 import "./globals.css";
@@ -123,6 +124,7 @@ export default function RootLayout({
             className: "rounded-xl",
           }}
         />
+        <Analytics />
       </body>
     </html>
   );
